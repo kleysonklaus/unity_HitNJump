@@ -72,6 +72,7 @@ public class Enemy : MonoBehaviour
         {
             // dañar personaje
             Debug.Log("se daña al pesonaje");
+            Player.obj.getDamage();
 
         }
     }
@@ -79,6 +80,7 @@ public class Enemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // destruir este objeto (enemigo)
+        Debug.Log("================== choca con enemigo desde arriba ========");
         if (collision.gameObject.CompareTag("Player"))
         {
             // dañar

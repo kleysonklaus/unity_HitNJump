@@ -75,6 +75,15 @@ public class Player : MonoBehaviour
 
     }
 
+    public void getDamage()
+    {
+        lives--;
+        if (lives <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
     private void OnDestroy()
     {
         obj = null;
