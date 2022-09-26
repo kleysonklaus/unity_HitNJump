@@ -60,9 +60,30 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         rb.velocity = new Vector2(movHor * speed, rb.velocity.y);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // dañar player
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // dañar personaje
+            Debug.Log("se daña al pesonaje");
+
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        // destruir este objeto (enemigo)
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // dañar
+            getKilled();
+        }
     }
 
     private void getKilled()
