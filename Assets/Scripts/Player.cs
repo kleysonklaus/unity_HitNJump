@@ -83,6 +83,14 @@ public class Player : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
+    public void addLives(int _lives)
+    {
+        lives += _lives;
+        if (lives >= Game.obj.maxLive)
+        {
+            lives = Game.obj.maxLive;
+        }
+    }
 
     private void OnDestroy()
     {
