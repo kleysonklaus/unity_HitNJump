@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
             groundLayer
         );
 
-        if (!isGrundedFloor)
+        if (isGrundedFloor) // se quita la negacion porque usa tilemap
         {
             movHor = movHor * -1;
         }
