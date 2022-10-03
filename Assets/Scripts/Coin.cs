@@ -23,6 +23,8 @@ public class Coin : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Game.obj.addScore(scoreGive);
+            // antes de que se destruya se muestra el pop
+            FXManager.obj.showPop(transform.position);
             gameObject.SetActive(false);
         }
     }

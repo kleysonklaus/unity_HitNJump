@@ -80,7 +80,9 @@ public class Player : MonoBehaviour
         lives--;
         if (lives <= 0)
         {
-            this.gameObject.SetActive(false);
+            FXManager.obj.showPop(transform.position);
+            Game.obj.gameOver();
+            // this.gameObject.SetActive(false);
         }
     }
     public void addLives(int _lives)

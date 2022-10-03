@@ -19,6 +19,7 @@ public class Killer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            FXManager.obj.showPop(transform.position);
             Game.obj.gameOver();
         }
     }
