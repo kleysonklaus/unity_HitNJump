@@ -44,6 +44,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Game.obj.gamePaused) { movHor = 0f; return; }
+
         movHor = Input.GetAxisRaw("Horizontal");
         if (movHor < 0.0f) transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
         else if (movHor > 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -97,6 +100,8 @@ public class Player : MonoBehaviour
     {
         lives--;
         AudioManager.obj.playHit();
+
+        UIManager.obj.updateLives();
 
         goImmune();
 

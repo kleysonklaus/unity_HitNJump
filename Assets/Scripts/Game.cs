@@ -20,6 +20,7 @@ public class Game : MonoBehaviour
     void Start()
     {
         gamePaused = false;
+        UIManager.obj.starGame();
     }
 
     // Update is called once per frame

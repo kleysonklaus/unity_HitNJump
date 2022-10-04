@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Game.obj.gamePaused) { return; }
+
         // evitar caer precipicio
         isGrundedFloor = Physics2D.Raycast(
             new Vector3(transform.position.x, transform.position.y - floorCheckY, transform.position.z),
