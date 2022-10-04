@@ -83,7 +83,8 @@ public class Enemy : MonoBehaviour
         Debug.Log("================== choca con enemigo desde arriba ========");
         if (collision.gameObject.CompareTag("Player"))
         {
-            // dañar
+            AudioManager.obj.playEnemyHit();
+            // matar al enemigo
             getKilled();
         }
     }

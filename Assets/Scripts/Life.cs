@@ -23,6 +23,9 @@ public class Life : MonoBehaviour
         {
             Game.obj.addScore(scoreGive);
             Player.obj.addLives(liveGive);
+
+            AudioManager.obj.playCoin();
+
             FXManager.obj.showPop(transform.position);
             gameObject.SetActive(false);
         }
